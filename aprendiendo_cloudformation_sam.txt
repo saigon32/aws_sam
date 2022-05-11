@@ -1,0 +1,164 @@
+guia: https://www.youtube.com/watch?v=Z_GAa9WToMM
+
+C:\wks_sam>sam deploy --guided
+Configuring SAM deploy
+======================
+
+        Looking for config file [samconfig.toml] :  Not found
+
+        Setting default arguments for 'sam deploy'
+        =========================================
+        Stack Name [sam-app]: mi-primer-app-sam
+        AWS Region [us-east-1]: 
+        #Shows you resources changes to be deployed and require a 'Y' to initiate deploy
+        Confirm changes before deploy [y/N]: y
+        #SAM needs permission to be able to create roles to connect to the resources in your template
+        Allow SAM CLI IAM role creation [Y/n]: y
+        #Preserves the state of previously provisioned resources when an operation fails
+        Disable rollback [y/N]: y
+        SaveHelloFunction may not have authorization defined, Is this okay? [y/N]: y
+        Save arguments to configuration file [Y/n]: y
+        SAM configuration file [samconfig.toml]: y
+        SAM configuration environment [default]:  
+
+        Looking for resources needed for deployment:
+         Managed S3 bucket: aws-sam-cli-managed-default-samclisourcebucket-1jaqo5pwqkr1a
+         A different default S3 bucket can be set in samconfig.toml
+
+        Saved arguments to config file
+        Running 'sam deploy' for future deployments will use the parameters saved above.
+        The above parameters can be changed by modifying samconfig.toml
+        Learn more about samconfig.toml syntax at
+        https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-config.html
+
+File with same data already exists at mi-primer-app-sam/11119159e0b8fcbd24f31466b201d1dc, skipping upload
+
+        Deploying with following values
+        ===============================
+        Stack name                   : mi-primer-app-sam
+        Region                       : us-east-1
+        Confirm changeset            : True
+        Disable rollback             : True
+        Deployment s3 bucket         : aws-sam-cli-managed-default-samclisourcebucket-1jaqo5pwqkr1a
+        Capabilities                 : ["CAPABILITY_IAM"]
+        Parameter overrides          : {}
+        Signing Profiles             : {}
+
+Initiating deployment
+=====================
+Uploading to mi-primer-app-sam/8c18c4c46c9dc94dd0990c24c8a666d2.template  541 / 541  (100.00%)
+Error: Failed to create changeset for the stack: mi-primer-app-sam, An error occurred (ValidationError) when calling the CreateChangeSet operation: Template format error: 2022-04-26 is not a supported value forAWSTemplateFormatVersion.
+
+C:\wks_sam>sam deploy --guided
+
+Configuring SAM deploy
+======================
+
+        Looking for config file [samconfig.toml] :  Not found
+
+        Setting default arguments for 'sam deploy'
+        =========================================
+        Stack Name [sam-app]: mi-primer-app-sam
+        AWS Region [us-east-1]: 
+        #Shows you resources changes to be deployed and require a 'Y' to initiate deploy
+        Confirm changes before deploy [y/N]: y
+        #SAM needs permission to be able to create roles to connect to the resources in your template
+        Allow SAM CLI IAM role creation [Y/n]: y
+        #Preserves the state of previously provisioned resources when an operation fails
+        Disable rollback [y/N]: y
+        SaveHelloFunction may not have authorization defined, Is this okay? [y/N]: y
+        Save arguments to configuration file [Y/n]: y
+        SAM configuration file [samconfig.toml]: 
+        SAM configuration environment [default]: 
+
+        Looking for resources needed for deployment:
+         Managed S3 bucket: aws-sam-cli-managed-default-samclisourcebucket-1jaqo5pwqkr1a
+         A different default S3 bucket can be set in samconfig.toml
+
+        Saved arguments to config file
+        Running 'sam deploy' for future deployments will use the parameters saved above.
+        The above parameters can be changed by modifying samconfig.toml
+        Learn more about samconfig.toml syntax at
+        https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-config.html
+
+File with same data already exists at mi-primer-app-sam/11119159e0b8fcbd24f31466b201d1dc, skipping upload
+
+        Deploying with following values
+        ===============================
+        Stack name                   : mi-primer-app-sam
+        Region                       : us-east-1
+        Confirm changeset            : True
+        Disable rollback             : True
+        Deployment s3 bucket         : aws-sam-cli-managed-default-samclisourcebucket-1jaqo5pwqkr1a
+        Capabilities                 : ["CAPABILITY_IAM"]
+        Parameter overrides          : {}
+        Signing Profiles             : {}
+
+Initiating deployment
+=====================
+Uploading to mi-primer-app-sam/85110095d7fbd364461caa7da0d7349d.template  541 / 541  (100.00%)
+
+Waiting for changeset to be created..
+
+CloudFormation stack changeset
+-------------------------------------------------------------------------------------------------------------------------------------
+Operation                         LogicalResourceId                 ResourceType                      Replacement
+-------------------------------------------------------------------------------------------------------------------------------------      
++ Add                             SaveHelloFunctionApiPermissionP   AWS::Lambda::Permission           N/A
+                                  rod
++ Add                             SaveHelloFunctionRole             AWS::IAM::Role                    N/A
++ Add                             SaveHelloFunction                 AWS::Lambda::Function             N/A
++ Add                             ServerlessRestApiDeploymentab83   AWS::ApiGateway::Deployment       N/A
+                                  e84df8
++ Add                             ServerlessRestApiProdStage        AWS::ApiGateway::Stage            N/A
++ Add                             ServerlessRestApi                 AWS::ApiGateway::RestApi          N/A
+-------------------------------------------------------------------------------------------------------------------------------------      
+
+Changeset created successfully. arn:aws:cloudformation:us-east-1:021062050058:changeSet/samcli-deploy1651006398/44f9d7c1-4def-402e-b1d8-59a004fb09e6
+
+
+Previewing CloudFormation changeset before deployment
+======================================================
+Deploy this changeset? [y/N]: y
+
+2022-04-26 15:53:37 - Waiting for stack create/update to complete
+
+CloudFormation events from stack operations
+-------------------------------------------------------------------------------------------------------------------------------------
+ResourceStatus                    ResourceType                      LogicalResourceId                 ResourceStatusReason
+-------------------------------------------------------------------------------------------------------------------------------------      
+CREATE_IN_PROGRESS                AWS::IAM::Role                    SaveHelloFunctionRole             -
+CREATE_IN_PROGRESS                AWS::IAM::Role                    SaveHelloFunctionRole             Resource creation Initiated     
+CREATE_COMPLETE                   AWS::IAM::Role                    SaveHelloFunctionRole             -
+CREATE_IN_PROGRESS                AWS::Lambda::Function             SaveHelloFunction                 -
+CREATE_IN_PROGRESS                AWS::Lambda::Function             SaveHelloFunction                 Resource creation Initiated     
+CREATE_COMPLETE                   AWS::Lambda::Function             SaveHelloFunction                 -
+CREATE_IN_PROGRESS                AWS::ApiGateway::RestApi          ServerlessRestApi                 -
+CREATE_IN_PROGRESS                AWS::ApiGateway::RestApi          ServerlessRestApi                 Resource creation Initiated     
+CREATE_COMPLETE                   AWS::ApiGateway::RestApi          ServerlessRestApi                 -
+CREATE_IN_PROGRESS                AWS::ApiGateway::Deployment       ServerlessRestApiDeploymentab83   -
+                                                                    e84df8
+CREATE_IN_PROGRESS                AWS::Lambda::Permission           SaveHelloFunctionApiPermissionP   -
+                                                                    rod
+CREATE_IN_PROGRESS                AWS::Lambda::Permission           SaveHelloFunctionApiPermissionP   Resource creation Initiated
+                                                                    rod
+CREATE_COMPLETE                   AWS::ApiGateway::Deployment       ServerlessRestApiDeploymentab83   -
+                                                                    e84df8
+CREATE_IN_PROGRESS                AWS::ApiGateway::Deployment       ServerlessRestApiDeploymentab83   Resource creation Initiated
+                                                                    e84df8
+CREATE_IN_PROGRESS                AWS::ApiGateway::Stage            ServerlessRestApiProdStage        -
+CREATE_COMPLETE                   AWS::ApiGateway::Stage            ServerlessRestApiProdStage        -
+CREATE_IN_PROGRESS                AWS::ApiGateway::Stage            ServerlessRestApiProdStage        Resource creation Initiated
+CREATE_COMPLETE                   AWS::Lambda::Permission           SaveHelloFunctionApiPermissionP   -
+                                                                    rod
+CREATE_COMPLETE                   AWS::CloudFormation::Stack        mi-primer-app-sam                 -
+-------------------------------------------------------------------------------------------------------------------------------------      
+
+Successfully created/updated stack - mi-primer-app-sam in us-east-1
+
+
+luego del despliegue, podemos invocar la funcion por postman:
+POST : https://ah4yj206dd.execute-api.us-east-1.amazonaws.com/Prod/hello
+
+
+
